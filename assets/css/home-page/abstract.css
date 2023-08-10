@@ -1,0 +1,22 @@
+.abstract {
+    width: 40%;
+}
+
+.abstract-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.abstract-text {
+    text-align: justify;
+    padding-bottom: .5rem;
+}
+
+.abstract-keywords {
+    margin-top: 1.2rem;
+}
+
+.abstract-text--title {
+    font-weight: 700;
+}

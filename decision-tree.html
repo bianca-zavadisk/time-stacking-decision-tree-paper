@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Time Stacking Decision Tree for Oscillatory Failure Case Detection in a Flight Control System</title>
+
+  <!-- Page icon -->
+  <link rel="icon" href="./assets/img/apple-icon-180x180.png">
+
+  <!-- Font import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap import -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+  <!-- CSS stylesheets -->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
+  <link rel="stylesheet" href="./assets/css/discussion-and-results/figures.css">
+  <link rel="stylesheet" href="./assets/css/mood-page/mood.css">
+  <link rel="stylesheet" href="./assets/css/mood-page/machine-learning.css">
+  <link rel="stylesheet" href="./assets/css/mood-page/logistic-regression-and-mop.css">
+  <link rel="stylesheet" href="./assets/css/mood-page/study-design.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar navbar-expand-lg  nav--mod">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/img/logo-pucpr-branca.png" alt="#" class="nav-image">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod " aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod" href="./timestacking.html">Time Stacking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod nav-link--mod-active" href="./decision-tree.html">Decision Tree</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod" href="./discussion-and-results.html">Discussion and results</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mood-container">
+    <h2 class="mood-title">Decision Tree</h2>
+
+    <div class="machine-learning">
+      <article class="ml-intro">
+        <div class="ml-2">
+          <h2 class="ml-title">Feature Engineering</h2>
+          <p class="ml-text">In total, 10 features are created for each input signal (command control current and the
+            feedback signal sensor). To
+            this end, simple signal processing techniques are employed,
+            such as delay, differences, moving average, moving standard deviation, moving root mean squared (RMS) value,
+            and zero-cross counting. The selection of such features
+            takes into account the limited computational resources
+            available in FCSs.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="logistic-regression ml-intro">
+      <h2 class="ml-title">Data acquisiton</h2>
+      <p class="ml-text">Data acquisition is necessary for generating inputs and outputs for training and validating the
+        DT. To this end, we develop a loop routine to simulate
+        multiple scenarios combining different parameters for the
+        OFC and control actions. Each run is composed of 60
+        seconds, or 2, 401 observations. As a result, 82, 297, 856
+        observations are captured in total. To limit computational
+        burden, only 20% of the data is randomly selected for
+        training and validation.</p>
+
+    </div>
+
+    <div class="multi-objective-optimization ml-intro">
+      <h2 class="ml-title">Model Training</h2>
+      <p class="ml-text">To develop the OFC detection model, a DT is
+        trained using a random sample with 50% of the selected data. The algorithm is configured with minimal number
+        of leaf node observations equals to 1, minimum number of
+        branch node observations equals to 10, and Gini’s diversity
+        index as the split criterion Breiman (2017).</p>
+
+
+      <div class="study-design ml-intro">
+        <h2 class="ml-title">Model Validation</h2>
+        <div class="study-design-content">
+          <div class="dataset-figure">
+            <p class="ml-text">This works use real-word data, from the major german water supplier, generated in a
+              research
+              project on drinking water.To validate the resulting DT, the remaining
+              50% of the selected data is employed. Additionally, tree
+              pruning is performed to improve generalization by removing model’s branches Breiman (2017), with prune
+              ratios
+              ranging from 0% to 99%. </p>
+              <img src="./assets/img/table.png" alt="German Company Logo" class="company-image">
+            </div>
+            <img src="./assets/img/validation.png" alt="Dataset representation" class="dataset-image">
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <img src="./assets/img/logo-pucpr-branca.png" alt="#" class="footer-image">
+
+    <article class="footer-article">
+      <p class="footer-article--text">Projeto PIBIC Jr 2022/2023</p>
+      <p class="footer-article--text">Bolsa CNPq</p>
+      <p class="footer-article--text">Scientific Communication of Pre-Processing Techniques in Data Science
+      </p>
+    </article>
+
+    <img src="./assets/img/CNPq_v2017_rgb.png" alt="#" class="footer-image">
+  </footer>
+
+  <!-- Bootstrap JS import -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

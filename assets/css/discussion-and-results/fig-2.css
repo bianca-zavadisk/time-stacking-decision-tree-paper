@@ -1,0 +1,27 @@
+.figure-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.figure-2--mod {
+    width: 40%;
+}
+
+.image-2--mod {
+    width: 90%;
+}
+
+.figure-2-caption {
+    width: 40%;
+
+    text-align: justify;
+}
+
+.figure-2-text {
+    margin-bottom: 1rem;
+}
+
+.figure-3 {
+    width: 25%;
+}

@@ -1,0 +1,17 @@
+.dataset-image {
+    margin-top: .9rem;
+    width: 60vw;
+}
+
+.dataset-figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin-right: 4rem;
+}
+
+.study-design-content {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time Stacking Decision Tree for Oscillatory Failure Case Detection in a Flight Control System</title>
+
+    <!-- Page icon -->
+    <link rel="icon" href="./assets/img/apple-icon-180x180.png">
+
+    <!-- Font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap import -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/sumary.css">
+    <link rel="stylesheet" href="./assets/css/pages.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar navbar-expand-lg nav--mod">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/logo-pucpr-branca.png" alt="#" class="nav-image">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link--mod " aria-current="page"
+                                href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link--mod nav-link--mod-active" href="./timestacking.html">Time Stacking</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link--mod" href="./decision-tree.html">Decision Tree</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link--mod" href="./discussion-and-results.html">Discussion and results</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container--page">
+        <article class="page-article intro">
+            <h2 class="page-title">Time Stacking</h2>
+            <p class="page-text">A combination of various trained base learners. It is based on the famous Stacking, which trains a meta-learner to generalize from the base learners’ outputs, and also uses the previous predictions from the base learners to improve the performance on continuous time series classification problems. 
+            </p>
+            <p class="page-text">The procedure to perform TimeStacking is similar to the one
+                presented by Stacking. Such procedure is presented below:             
+                </p>
+
+            <ul class="page-list">
+                <li class="page-item">First, the training dataset is split in two parts.</li>
+                <li class="page-item">Next, multiple base models are trained on the first split.</li>
+                <li class="page-item">Subsequently, the base models predict the outputs for
+                    the other split.</li>
+                <li class="page-item">Given the base models’ outputs as input and the expected
+                    outputs, the meta-learner can be finally trained. At this
+                    step, it is important to notice that the number of previous
+                    outputs from the base-models can be selected as a
+                    hyperparameter for TimeStacking.3 All the base model’s
+                    current and previous outputs are then converted to a
+                    single array, which is used as input when training the
+                    meta-learner.</li>
+                <li class="page-item">Finally, once new data is available, the base models can
+                    predict their outputs, which are used by TimeStacking
+                    to predict a more accurate output.</li>
+            </ul>
+            
+        </article>
+        <img src="./assets/img/timestacking.png" class="intro-image" alt="#">
+
+    </main>
+
+    <footer class="footer">
+        <img src="./assets/img/logo-pucpr-branca.png" alt="#" class="footer-image">
+
+        <article class="footer-article">
+            <p class="footer-article--text">Projeto PIBIC Jr 2022/2023</p>
+            <p class="footer-article--text">Bolsa CNPq</p>
+            <p class="footer-article--text">Scientific Communication of Pre-Processing Techniques in Data Science
+            </p>
+        </article>
+
+        <img src="./assets/img/CNPq_v2017_rgb.png" alt="#" class="footer-image">
+    </footer>
+
+    <!-- Bootstrap JS import -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

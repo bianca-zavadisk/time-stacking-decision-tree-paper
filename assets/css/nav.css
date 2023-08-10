@@ -1,0 +1,20 @@
+.nav-link--mod {
+    color: var(--white);
+    font-size: 1.05rem;
+}
+
+.nav-link--mod-active {
+    font-weight: 700;
+    color: var(--white);
+}
+
+.nav--mod {
+    background-color: var(--blue);
+}
+
+.nav-image {
+    object-fit: cover;
+    height: 3rem;
+
+    margin: 0 3rem 0 2rem;
+}

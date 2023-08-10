@@ -1,0 +1,56 @@
+.container--page {
+    display: flex;
+    align-items: center;
+
+    margin: 3rem;
+}
+
+.page-article {
+    width: 60%;
+
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.page-title {
+    color: var(--wine);
+
+    font-weight: 900;
+    font-size: 4rem;
+
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.page-text {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.intro-image {
+    width: 60%;
+    margin-top: 1.5rem;
+}
+
+.conclusion-box {
+    width: 75%;
+    text-align: center;
+
+    padding: 1rem;
+
+    background-color: var(--blue);
+    border-radius: 1rem;
+
+    color: var(--white);
+    font-weight: 700;
+
+    margin-top: 1.75rem;
+}
+
+.page-list {
+    margin-left: 1.5rem;
+}
+
+.page-item {
+    margin-bottom: 1.2rem;
+}

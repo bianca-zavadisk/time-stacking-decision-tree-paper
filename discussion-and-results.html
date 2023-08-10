@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Time Stacking Decision Tree for Oscillatory Failure Case Detection in a Flight Control System</title>
+
+  <!-- Page icon -->
+  <link rel="icon" href="./assets/img/apple-icon-180x180.png">
+
+  <!-- Font import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap import -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+  <!-- CSS stylesheets -->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
+  <link rel="stylesheet" href="./assets/css/discussion-and-results/figures.css">
+  <link rel="stylesheet" href="./assets/css/discussion-and-results/discussion-and-results.css">
+  <link rel="stylesheet" href="./assets/css/discussion-and-results/fig-1.css">
+  <link rel="stylesheet" href="./assets/css/discussion-and-results/fig-2.css">
+  <link rel="stylesheet" href="./assets/css/discussion-and-results/fig-3.css">
+  <link rel="stylesheet" href="./assets/css/footer.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar navbar-expand-lg nav--mod">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/img/logo-pucpr-branca.png" alt="#" class="nav-image">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod " aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod" href="./timestacking.html">Time Stacking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod" href="./decision-tree.html">Decision Tree</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link--mod nav-link--mod-active" href="./discussion-and-results.html">Discussion and
+                results</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container dr-container">
+    <h2 class="dr-title">Discussion and Results</h2>
+
+    <h3 class="dr-subtitle">Decision Tree</h3>
+    <p class="dr-esp">The pruned DT is converted to a Simulink subsystem
+      composed of multiple switch blocks 1 and included to the
+      benchmark design model. Four different scenarios using
+      the model with best accuracy are depicted in the Figures.</p>
+
+    <div class="dt-results">
+      <figure class="figure figure--mod figure-2--mod">
+        <img src="./assets/img/1.png" class="figure-img img-fluid rounded image--mod image-2--mod" alt="...">
+        <figcaption class="figure-caption caption--mod">Scenario with no turbulence
+          and no fault, where only a few points are incorrectly
+          detected.</figcaption>
+      </figure>
+  
+      <figure class="figure figure--mod figure-2--mod">
+        <img src="./assets/img/2.png" class="figure-img img-fluid rounded image--mod image-2--mod" alt="...">
+        <figcaption class="figure-caption caption--mod">Scenario with OFC, but still
+          no turbulence. As a consequence, the detection is highly
+          accurate for both classes, with few miss-classifications.</figcaption>
+      </figure>
+  
+      <figure class="figure figure--mod figure-2--mod">
+        <img src="./assets/img/3.png" class="figure-img img-fluid rounded image--mod image-2--mod" alt="...">
+        <figcaption class="figure-caption caption--mod">Severe turbulence scenario, the number of FNs and FPs increase.</figcaption>
+      </figure>
+  
+      <figure class="figure figure--mod figure-2--mod">
+        <img src="./assets/img/4.png" class="figure-img img-fluid rounded image--mod image-2--mod" alt="...">
+        <figcaption class="figure-caption caption--mod">Moreover, the
+          number of errors increases even further when additional
+          complexities are added to the signals, such as the load
+          factor step input.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="dr-subtitle">Time Stacking - Control Law Reconfiguration</h3>
+    <p class="dr-esp">The learner predicts false positives
+      and negatives in fault-free and turbulence scenarios, respectively. Nevertheless, such a situation is undesirable to
+      use, as it is, to coordinate the control law reconfiguration
+      system. That is, even scarce false positives within a true
+      negative time window could suggest changing the control
+      law in an intermittent and undesirable way. Therefore, an
+      additional system is required to avoid such situations.</p>
+    <p class="dr-esp">A basic implementation is proposed here, using only the
+      previously trained decision tree in a time window of one
+      second, using the median value of the counting of failure
+      / no-failure prediction.
+      </p>
+    
+      <div class="dt-results">
+        <figure class="figure figure--mod figure-3">
+          <img src="./assets/img/11.png" class="figure-img img-fluid rounded image--mod image-2--mod" alt="...">
+          <figcaption class="figure-caption caption--mod">Longitudinal states and surface deflection for a
+            normal case.</figcaption>
+        </figure>
+    
+        <figure class="figure figure--mod figure-3">
+          <img src="./assets/img/22.png" class="figure-img img-fluid rounded image--mod image-2--mod" alt="...">
+          <figcaption class="figure-caption caption--mod">Longitudinal states and surface deflection for a
+            severe turbulence case.</figcaption>
+        </figure>
+    
+        <figure class="figure figure--mod figure-3">
+          <img src="./assets/img/33.png" class="figure-img img-fluid rounded image--mod image-2--mod" alt="...">
+          <figcaption class="figure-caption caption--mod">Longitudinal states and surface deflection for a
+            failure case.</figcaption>
+        </figure>
+      </div>
+
+
+  </main>
+
+  <footer class="footer">
+    <img src="./assets/img/logo-pucpr-branca.png" alt="#" class="footer-image">
+
+    <article class="footer-article">
+      <p class="footer-article--text">Projeto PIBIC Jr 2022/2023</p>
+      <p class="footer-article--text">Bolsa CNPq</p>
+      <p class="footer-article--text">Scientific Communication of Pre-Processing Techniques in Data Science
+      </p>
+    </article>
+
+    <img src="./assets/img/CNPq_v2017_rgb.png" alt="#" class="footer-image">
+  </footer>
+
+  <!-- Bootstrap JS import -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

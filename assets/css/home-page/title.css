@@ -1,0 +1,68 @@
+.main-presentation {
+    width: 100vw;
+    height: 85vh;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.main-textset {
+    padding: 2rem 2rem 0 2rem;
+
+    margin-bottom: 1rem;
+    margin-right: 1.5rem;
+}
+
+.main-subtitle {
+    font-family: inherit;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+
+    padding-bottom: 1rem;
+
+    color: navy;
+}
+
+.main-title {
+    font-family: inherit;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 3rem;
+
+    padding-bottom: 1rem;
+
+    color: navy;
+}
+
+.article-link {
+    font-family: inherit;
+    font-size: inherit;
+
+    
+    color: navy;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main-continue-reading {
+    display: inline-block;
+
+    width: 0.875rem;
+    height: 0.875rem;
+
+    margin-left: 0.75rem;
+}
+
+.main-description {
+    text-align: justify;
+    font-size: inherit;
+
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main-image {
+    width: 60%;
+    object-fit: cover;
+}

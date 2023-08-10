@@ -1,0 +1,22 @@
+.footer {
+    background-color: var(--blue);
+
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-image {
+    height: 5.5rem;
+}
+
+.footer-article--text {
+    color: var(--white);
+    text-align: center;
+
+    margin-bottom: .6rem;
+
+    font-weight: 700;
+}

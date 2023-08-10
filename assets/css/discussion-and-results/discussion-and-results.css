@@ -1,0 +1,42 @@
+.dr-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dr-title {
+    color: var(--wine);
+
+    font-weight: 900;
+    font-size: 4rem;
+
+    margin-bottom: 2rem;
+
+    line-height: 4rem;
+    text-align: center;
+}
+
+.dt-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dr-subtitle {
+    color: var(--wine-2);
+
+    font-weight: 900;
+    font-size: 2rem;
+
+    line-height: 4rem;
+    text-align: center;
+}
+
+.dr-esp {
+    width: 75vw;
+    margin: 0 4rem 2rem 4rem;
+    text-align: center;
+}

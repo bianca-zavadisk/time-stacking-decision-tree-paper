@@ -1,0 +1,43 @@
+.sumary {
+    width: 35%;
+}
+
+.sumary-item {
+    background-color: var(--wine);
+    border: 1px solid var(--wine);
+    border-radius: 5px;
+
+    padding: .8rem;
+
+    margin-bottom: .5rem;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.sumary-continue {
+    display: none;
+
+    transition: all 1s;
+}
+
+.sumary-item--link {
+    text-decoration: none;
+    color: var(--white);
+    
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    transition: all .5s;
+}
+
+.sumary-item--link:hover + .sumary-continue {
+    display: block;
+}
+
+.sumary-item--link:hover {
+    color: var(--white);
+    font-size: 1.34rem;
+}
